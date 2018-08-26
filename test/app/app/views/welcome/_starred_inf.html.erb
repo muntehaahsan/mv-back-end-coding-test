@@ -1,0 +1,29 @@
+<li class='padding-top-10' id='user_starred_info_<%= user[:id] %>'>
+  <div  class="media-left opacity-05 starred_inf" >
+    <div class="media-left ">
+      <img class="media-object img-circle circleborder" src="<%= user[:influencer_instagram_profile_image] %>"  alt="..." >
+    </div>
+    <div class="media-body padding-top-10">
+      <div >
+        <div class="user_name"><%= user[:influencer_full_name] %></div>
+        <div class="instagram_id"><img   src="assets/insta_icon.png"  alt="insta_icon" height="24px" width="24px"><%= user[:influencer_instagram_username] %></div>
+      </div>
+    </div>
+    <div class="media-right padding-top-10">
+      <div >
+        <div class="user_name"><%= number_with_delimiter(user[:statistics_followers], :delimiter => ',') %></div>
+        <div class="instagram_id">Followers</div>
+      </div>
+    </div>
+    <div class="media-right padding-top-10">
+      <div >
+        <div class="user_name"><%= user[:statistics_engagement] %>%</div>
+        <div class="instagram_id">Engagement</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="media-right del_icon">
+    <img src="assets/del_icon.png" class="pull-right hand_cursor" onclick="delete_user(<%= user[:id] %>,event);" alt="del user" >
+  </div>
+</li>

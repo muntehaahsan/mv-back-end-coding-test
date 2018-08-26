@@ -1,3 +1,34 @@
-<% @suggested_influencers.each do |user|%>
-      <%= user.influencer_full_name %>
-<%end %>
+<div class="container">
+  <div class="row grid-divider">
+    <div class="col-sm-4">
+      <div class="col-padding">
+        <h2 >Suggested Influencers</h2>
+        <% unless @suggested_influencers.empty? %>
+          <ul>
+          <% @suggested_influencers.each do |user|%>
+              <%= render partial: "suggested_inf", locals: {user: user} %>
+          <% end %>
+        <% else %>
+          <p> No suggested influencers found</p>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="col-padding">
+        <h2 >Starred Influencers</h2>
+        <% unless @starred_influencers.empty? %>
+          <ul>
+          <% @starred_influencers.each do |user|%>
+              <%= render partial: "starred_inf", locals: {user: user} %>
+          <% end %>
+        <% else %>
+          <p> No starred influencers found </p>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>

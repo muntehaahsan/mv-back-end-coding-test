@@ -1,3 +1,3 @@
 class Influencer < ActiveRecord::Base
-  has_many :starred_influencers
+  has_one :starred_influencer
 end

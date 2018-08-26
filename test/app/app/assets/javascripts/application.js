@@ -10,6 +10,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require turbolinks
+//= require jquery
+//= require jquery-ui.js
+//= require jquery.min.js
 //= require_tree .
+//= bootstarp
+
+
+function add_to_starred(id) {
+    url = '/add_to_starred_influencers'
+    $.ajax({
+        url: url,
+        type: 'get',
+        data: {user_id: id},
+        success: function (data) {
+            {
+                //Remove user from suggested influencers' list
+                //Add user to favorite influencers' list
+                alert('ddd');
+            }
+        }
+    });
+}

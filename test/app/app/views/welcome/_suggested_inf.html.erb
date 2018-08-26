@@ -1,0 +1,14 @@
+<li id='user_primary_info_<%= user[:id] %>' class="media opacity-05" >
+  <div class="media-left ">
+    <img class="media img-circle circleborder" src="<%= user[:influencer_instagram_profile_image] %>"  alt="..." >
+  </div>
+  <div class="media-body">
+    <div >
+      <div class="user_name"><%= user[:influencer_full_name] %></div>
+      <div class="instagram_id"><img src="assets/insta_icon.png"  alt="insta_icon" height="24px" width="24px"><%= user[:influencer_instagram_username] %></div>
+    </div>
+  </div>
+  <div class="media-right add_icon">
+    <img src="assets/add_icon.png" class="pull-right hand_cursor" onclick="add_to_starred(<%= user[:id] %>);" alt="add user" >
+  </div>
+</li>
