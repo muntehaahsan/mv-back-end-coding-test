@@ -11,24 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui.js
+//= require rails-ujs
+//= require jquery.remotipart
 //= require jquery.min.js
-//= require_tree .
-//= bootstarp
-
-
-function add_to_starred(id) {
-    url = '/add_to_starred_influencers'
-    $.ajax({
-        url: url,
-        type: 'get',
-        data: {user_id: id},
-        success: function (data) {
-            {
-                //Remove user from suggested influencers' list
-                //Add user to favorite influencers' list
-                alert('ddd');
-            }
-        }
-    });
-}
+//= require bootstrap.js

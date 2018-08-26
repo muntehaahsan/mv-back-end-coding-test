@@ -1,0 +1,4 @@
+//Remove user from starred influencers' list
+document.getElementById("user_starred_info_"+<%= @suggested_inf.id  %>).remove();
+//Add user to suggested influencers' list
+$("#suggested_ul").append("<%= escape_javascript(render partial: 'welcome/suggested_inf', locals: { user: @suggested_inf } ) %>");

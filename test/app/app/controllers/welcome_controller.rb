@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     #Get list of suggested influencers
-    @suggested_influencers = Influencer.all
+    @suggested_influencers = Influencer.get_all
 
     #Get list of starred influencers
     @starred_influencers = []

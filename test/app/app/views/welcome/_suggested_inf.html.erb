@@ -9,6 +9,6 @@
     </div>
   </div>
   <div class="media-right add_icon">
-    <img src="assets/add_icon.png" class="pull-right hand_cursor" onclick="add_to_starred(<%= user[:id] %>);" alt="add user" >
+    <%= link_to image_tag("add_icon.png"), add_to_starred_path(:user_id => user[:id]) , :remote => true , class: 'pull-right hand_cursor'%>
   </div>
 </li>
