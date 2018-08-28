@@ -1,5 +1,5 @@
 <li class='padding-top-10' id='user_starred_info_<%= user[:id] %>'>
-  <div  class="media-left opacity-05 starred_inf" >
+  <div  class="media-left opacity-05 starred_inf" id="<%= user[:statistics_engagement] %>|<%= user[:statistics_followers] %>">
     <div class="media-left ">
       <img class="media-object img-circle circleborder" src="<%= user[:influencer_instagram_profile_image] %>"  alt="..." >
     </div>
@@ -17,7 +17,7 @@
     </div>
     <div class="media-right padding-top-10">
       <div >
-        <div class="user_name"><%= user[:statistics_engagement] %>%</div>
+        <div class="user_name" ><%= user[:statistics_engagement] %>%</div>
         <div class="instagram_id">Engagement</div>
       </div>
     </div>

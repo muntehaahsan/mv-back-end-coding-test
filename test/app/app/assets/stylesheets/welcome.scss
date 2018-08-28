@@ -44,3 +44,24 @@ margin-top: 10px;
   height:70px;
   width: 70px;
 }
+
+.sort_div
+{
+  float: right;
+  margin-top: 30px;
+}
+
+.starred_div
+{
+  float:left;
+  display: inline-block;
+}
+div.sort_div > div:first-child
+{
+  float: left;
+  padding: 9px;
+}
+
+div.sort_div > div:nth-child(2) {
+  float: right;
+}

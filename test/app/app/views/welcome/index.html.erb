@@ -3,32 +3,39 @@
     <div class="col-sm-4">
       <div class="col-padding">
         <h2 >Suggested Influencers</h2>
+        <ul id="suggested_ul">
         <% unless @suggested_influencers.empty? %>
-          <ul id="suggested_ul">
           <% @suggested_influencers.each do |user|%>
               <%= render partial: "suggested_inf", locals: {user: user} %>
           <% end %>
         <% else %>
-          <p> No suggested influencers found</p>
+          <p class='empty_sugg_list'> No suggested influencers found</p>
         <% end %>
         </ul>
       </div>
     </div>
     <div class="col-sm-8">
       <div class="col-padding">
-        <h2 >Starred Influencers</h2>
-        <ul id="starred_ul">
-          <% unless @starred_influencers.empty? %>
-            <% @starred_influencers.each do |user|%>
+        <h2 style="float: left;" >Starred Influencers</h2>
+        <div class="sort_div">
+          <div><p> Sort By:</p></div>
+          <div><%=  select_tag 'select_box', options_for_select(SORT_LIST.collect{ |u,i| [u, SORT_LIST.index(u) ] }) ,
+                                include_blank: "Choose Here" , onchange:  "sortlist()",  class: 'form-control' %>
+          </div>
+        </div>
+        <div class='starred_div'>
+          <ul id="starred_ul">
+            <% unless @starred_influencers.empty? %>
+              <% @starred_influencers.each do |user|%>
                 <%= render partial: "starred_inf", locals: {user: user} %>
+              <% end %>
+            <% else %>
+              <p class='empty_fav_list'> No starred influencers found </p>
             <% end %>
-          <% else %>
-            <p> No starred influencers found </p>
-          <% end %>
-        </ul>
-      </div>
+          </ul>
+        </div>
+       </div>
     </div>
-
   </div>
-
 </div>
+
