@@ -1,8 +1,8 @@
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: Munteh@hsan7034
+  username: postgres
+  password: postgres
   host: localhost
   timeout: 5000
 development:
@@ -15,4 +15,5 @@ test:
 
 production:
   <<: *default
-  database: app_prod
+  database: app_production
+  

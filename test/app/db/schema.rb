@@ -12,15 +12,18 @@
 
 ActiveRecord::Schema.define(version: 20180825010244) do
 
-  create_table "influencers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "influencers", force: :cascade do |t|
     t.string "influencer_full_name"
     t.string "influencer_instagram_username"
     t.string "influencer_instagram_profile_image"
     t.integer "statistics_followers"
-    t.float "statistics_engagement", limit: 24
+    t.float "statistics_engagement"
   end
 
-  create_table "starred_influencers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "starred_influencers", force: :cascade do |t|
     t.bigint "influencer_id"
     t.index ["influencer_id"], name: "index_starred_influencers_on_influencer_id"
   end
